@@ -1,0 +1,40 @@
+@import url('~src/assets/_themes/sewing.less');
+
+.entry-head {
+  color: @background;
+  background-color: @primary;
+  padding: 0 32px;
+  display: flex;
+}
+
+.entry-title {
+  align-self: baseline;
+}
+
+.entry-author {
+  margin-left: 8px;
+  align-self: baseline;
+}
+
+.entry-tags {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-self: baseline;
+  justify-content: flex-end;
+  background-color: @accent;
+}
+
+.entry-tag {
+  margin: 0 2px;
+  padding: 4px;
+  background-color: @highlight;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.entry-image {
+  margin: 0 8px 8px 0;
+  float: left;
+  width: 256px;
+}

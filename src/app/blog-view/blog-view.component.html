@@ -1,0 +1,3 @@
+<div class="blog-content">
+  <app-card class="card" *ngFor="let entry of entries | async" [entry]="entry" [routerLink]="[entry.id]"></app-card>
+</div>

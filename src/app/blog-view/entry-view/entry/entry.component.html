@@ -1,0 +1,12 @@
+<div class="entry-head">
+  <h1 class="entry-title">{{entry.title}}</h1>
+  <p class="entry-author">by {{entry.author}}</p>
+</div>
+<div class="entry-tags" *ngIf="entry.tags">
+  <p class="entry-tag" *ngFor="let tag of entry.tags" (click)="switchTagStatus(tag)">{{tag}}</p>
+</div>
+<div class="entry-body">
+  <img *ngIf="entry.image" class="entry-image" src="{{entry.image}}">
+  <p>{{entry.description}}</p>
+</div>
+
