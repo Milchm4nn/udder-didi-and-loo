@@ -8,17 +8,12 @@ import {Observable} from 'rxjs';
   styleUrls: ['./tag.component.less']
 })
 export class TagComponent implements OnInit {
-  tags: string[];
-
   tags$: Observable<Array<string>>;
 
   constructor(private tagService: TagService) { }
 
   ngOnInit(): void {
     this.tags$ = this.tagService.tags;
-
-    // Todo: replace with observable
-    this.tags = this.tagService.getTags();
   }
 
   switchTagStatus(tag: string) {

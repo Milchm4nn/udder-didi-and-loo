@@ -12,24 +12,22 @@ export class TagService {
   public readonly tags: Observable<Array<string>> = this.TAGS.asObservable();
 
 
-  /* Used to add or remove a tag to/from the actual filter. */
+  /* Add or remove a tag to/from the actual filter. */
   switchTagStatus(tag: string) {
     if (this.selectedTags != null) {
+      /* Remove tag, if it is already selected */
       if (this.selectedTags.find((e => e === tag))) {
         console.log(tag + ' removed');
         this.selectedTags = this.selectedTags.filter(e => e !== tag);
+      /* Add tag, if not selected */
       } else {
         console.log(tag + ' added');
         this.selectedTags.push(tag);
       }
+      /* Push selected tag onto the observable */
       this.TAGS.next(this.selectedTags);
       this.entryService.filterEntries(this.selectedTags);
     }
-  }
-
-  getTags() {
-    // Todo: return observable
-    return this.selectedTags;
   }
 
   constructor(private entryService: EntryService) {

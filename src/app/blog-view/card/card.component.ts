@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Entry} from '../../_models/Entry';
 import {animate, group, style, transition, trigger} from '@angular/animations';
+import {TagService} from '../../_services/tag/tag.service';
+import {DrawerService} from '../../_services/drawer/drawer.service';
 
 
 @Component({
@@ -31,9 +33,17 @@ import {animate, group, style, transition, trigger} from '@angular/animations';
 export class CardComponent implements OnInit {
   @Input() entry: Entry;
 
-  constructor() {
+  constructor(private tagService: TagService, private drawerService: DrawerService) {
   }
 
   ngOnInit(): void {
+  }
+
+  switchTagStatus(tag: string) {
+    this.tagService.switchTagStatus(tag);
+  }
+
+  openDrawer() {
+    this.drawerService.switchStatus(true);
   }
 }

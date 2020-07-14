@@ -3,13 +3,15 @@
 .card-head {
   flex: 1;
   max-width: 196px;
+  outline: none;
+  cursor: pointer;
 }
 
 .card-body {
   padding: 0 8px;
   flex: 2;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   text-align: justify;
 }
 
@@ -25,19 +27,53 @@
   object-fit: cover;
 }
 
-.body-text {
-  width: 100%;
-}
-
 .body-title {
   font-size: 18px;
   font-weight: bolder;
   margin: 0 0 8px 0;
   border-bottom: 1px solid rgba(0,0,0,0.1);
+  outline: none;
+  cursor: pointer;
+}
+
+.body-text {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  outline: none;
+  cursor: pointer;
+}
+
+.body-footer {
+  margin: 8px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.footer-tag {
+  margin: 0 2px;
+  padding: 4px;
+  background-color: @highlight;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  outline: none;
+  user-select: none;
 }
 
 .tail-icon {
   width: 100%;
   object-fit: contain;
+  outline: none;
+  cursor: pointer;
 }
 

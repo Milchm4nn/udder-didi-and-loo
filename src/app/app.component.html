@@ -1,19 +1,28 @@
-<div class="navigation">
-  <span class="navigation-title" routerLink="">
-    <img alt="" class="brand-image" src=""/>
-    <div class="brand-name">{{title}}</div>
-  </span>
-  <div class="navigation-router">
-    <button class="button" routerLink="/blog" routerLinkActive="active-route">Blog</button>
+<div class="ui-container">
+  <div class="main-frame">
+    <div class="navigation">
+      <span class="navigation-title" routerLink="">
+        <img alt="" class="brand-image" src=""/>
+        <div class="brand-name">{{title}}</div>
+      </span>
+      <div class="navigation-router">
+        <button class="button" routerLink="blog" routerLinkActive="active-route">Blog</button>
+      </div>
+      <div class="navigation-social">
+        <img class="social-icon" src="../assets/facebook_icon.svg">
+        <img class="social-icon" src="../assets/instagram_icon.svg">
+        <img class="social-icon" src="../assets/youtube_icon.svg">
+      </div>
+    </div>
+    <div class="content-container">
+      <app-tag></app-tag>
+      <router-outlet></router-outlet>
+    </div>
+    <div class="footer">
+      <app-footer></app-footer>
+    </div>
   </div>
-  <div class="social-background"></div>
-  <div class="navigation-social">
-    <img class="social-icon" src="../assets/facebook_icon.svg">
-    <img class="social-icon" src="../assets/instagram_icon.svg">
-    <img class="social-icon" src="../assets/youtube_icon.svg">
+  <div class="drawer" [ngClass]="{'drawer-active': isDrawerActive | async}">
+    <app-drawer></app-drawer>
   </div>
-</div>
-<div class="content-container">
-  <app-tag></app-tag>
-  <router-outlet></router-outlet>
 </div>

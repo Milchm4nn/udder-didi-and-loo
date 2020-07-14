@@ -1,0 +1,29 @@
+@import url('~src/assets/_themes/sewing.less');
+
+.drawer-content {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  background-color: @accent;
+}
+
+.drawer-collapse {
+  background-color: @accent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 16px 8px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.drawer-collapse image {
+  object-fit: contain;
+}
+
+.drawer-ui {
+  display: flex;
+  flex-direction: column;
+}

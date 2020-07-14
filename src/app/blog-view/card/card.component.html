@@ -1,12 +1,13 @@
-<div *ngIf="entry.image" class="card-head">
+<div *ngIf="entry.image" class="card-head" [routerLink]="[entry.id]">
   <img class="head-image" src="{{entry.image}}" alt="">
 </div>
 <div class="card-body">
-  <div class="body-title">{{entry.title}}</div>
-  <div class="body-text">{{entry.description}}</div>
+  <div class="body-title" [routerLink]="[entry.id]">{{entry.title}}</div>
+  <div class="body-text" [routerLink]="[entry.id]">{{entry.description}}</div>
+  <div class="body-footer"><p class="footer-tag" *ngFor="let tag of entry.tags" (click)="switchTagStatus(tag)">{{tag}}</p></div>
 </div>
 <div class="card-tail">
-  <img class="tail-icon" src="../assets/share_icon.svg" alt="">
-  <img class="tail-icon" src="../assets/message_icon.svg" alt="">
+  <img class="tail-icon" src="assets/share_icon.svg" alt="">
+  <button class="card-button" (click)="openDrawer()"><img class="tail-icon" src="assets/message_icon.svg" alt=""></button>
 </div>
 

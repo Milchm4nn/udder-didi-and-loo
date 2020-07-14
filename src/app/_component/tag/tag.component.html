@@ -1,1 +1,1 @@
-<div *ngIf="tags.length > 0" class="tag-container"><p class="tag" *ngFor="let tag of tags$ | async" (click)="switchTagStatus(tag)">{{tag}}</p></div>
+<div *ngIf="tags$" class="tag-container"><p class="tag" *ngFor="let tag of tags$ | async" (click)="switchTagStatus(tag)">{{tag}}</p></div>

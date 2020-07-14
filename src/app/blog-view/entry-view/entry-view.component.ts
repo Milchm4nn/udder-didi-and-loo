@@ -9,7 +9,6 @@ import {Entry} from '../../_models/Entry';
   styleUrls: ['./entry-view.component.less']
 })
 export class EntryViewComponent implements OnInit {
-  entries = entries;
   entryId;
   entry;
 
